@@ -1,5 +1,12 @@
 # Libpostal REST
 
+## install deps
+
+    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+    go get github.com/openvenues/gopostal/expand
+    go get github.com/gorilla/mux
+
+
 ## start Service
     go build main.go
     ./main -port=5000
