@@ -1,5 +1,10 @@
 # Libpostal REST
 
+## start Service
+    go build main.go
+    ./main -port=5000
+
+
 ## API Example
 
 Replace <host> with your host
