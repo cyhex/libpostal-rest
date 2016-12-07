@@ -16,11 +16,13 @@ type Request struct {
 }
 
 func main() {
+	portPtr := flag.String("port", "5000", "an int")
+	flag.Parse()
 	r := mux.NewRouter()
 	r.HandleFunc("/expand", ExpandHandler).Methods("POST")
 	r.HandleFunc("/parser", ParserHandler).Methods("POST")
-	fmt.Println("listening on port 8080")
-	http.ListenAndServe(":8080", r)
+	fmt.Println("listening on port: " *portPtr )
+	http.ListenAndServe(":" + *portPtr  , r)
 }
 
 func ExpandHandler(w http.ResponseWriter, r *http.Request) {
